@@ -1,0 +1,11 @@
+<div class="section">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-half">
+        <p><strong>Tweeet:</strong></p>
+				<h1 class="title"><%= @tweeet.tweeet %></h1>
+        <% if user_signed_in? && current_user == @tweeet.user %>
+          <%= link_to 'Edit', edit_tweeet_path(@tweeet), class: 'button is-dark' %>
+        <% end %>
+        <%= link_to 'Back', tweeets_path, class: 'button is-dark' %>
+			</div>
