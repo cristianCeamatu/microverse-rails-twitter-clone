@@ -38,10 +38,16 @@
       <div id="navbarExample" class="navbar-menu">
         <div class="navbar-end">
           <div class="field is-grouped">
+          <% if user_signed_in? %>
             <p class="navbar-item">
               <%= link_to 'New tweeet', new_tweeet_path, class: 'button is-info is-inverted' %>
             </p>
-            <p class="navbar-item has-text-white">Sign up</p>
+            <p class="navbar-item"><%= link_to current_user.name, edit_user_registration_path, class: 'button is-info' %></p>
+            <p class="navbar-item"><%= link_to 'Log out', destroy_user_session_path, method: 'delete', class: 'button is-info' %></p>
+          <% else %>
+            <p class="navbar-item"><%= link_to 'Sign in', new_user_session_path, class: 'button is-info' %></p>
+            <p class="navbar-item"><%= link_to 'Sign up', new_user_registration_path, class: 'button is-info' %></p>
+          <% end %>
           </div>
         </div>
       </div>
