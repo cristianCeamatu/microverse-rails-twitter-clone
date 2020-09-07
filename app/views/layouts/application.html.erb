@@ -40,7 +40,7 @@
           <div class="field is-grouped">
           <% if user_signed_in? %>
             <p class="navbar-item">
-              <%= link_to 'New tweeet', new_tweeet_path, class: 'button is-info is-inverted' %>
+              <%= link_to 'New tweeet', root_path, class: 'button is-info is-inverted' %>
             </p>
             <p class="navbar-item"><%= link_to current_user.name, edit_user_registration_path, class: 'button is-info' %></p>
             <p class="navbar-item"><%= link_to 'Log out', destroy_user_session_path, method: 'delete', class: 'button is-info' %></p>
